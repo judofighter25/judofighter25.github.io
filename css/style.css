@@ -1,0 +1,202 @@
+body {
+    padding: 5%;
+    background-image: url('/images/background.png');
+}
+
+#map { 
+    height: 90%;
+    width: 32%;
+    margin-left: 10px;
+}
+
+.votes {
+    display: inline-block;
+}
+
+#star1, #star2, #star3, #date {
+    float: right;
+}
+
+.schools {
+    height: 270px;
+    width: 1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 42px;
+    line-height: 6.8;
+}
+
+#page1 {
+    height: 350px;
+}
+
+#page2 {
+    height: 600px;
+}
+
+#page3 {
+    height: 1400;
+    padding-top: 100px;
+}
+
+.cd-panel {
+    /*...*/
+    visibility: hidden;
+    transition: visibility 0s 0.6s;
+}
+ 
+.cd-panel.is-visible {
+    visibility: visible;
+    transition: visibility 0s 0s;
+}
+ 
+.cd-panel-header {
+    /*...*/
+    position: fixed;
+    top: -50px;
+    width: 90%;
+    height: 50px;
+    transition: top 0.3s 0s;
+    background-color: blue;
+}
+ 
+.is-visible .cd-panel-header {
+    top: 50px;
+    position: fixed;
+    width: 25%;
+    right: 0;
+    transition: top 0.3s 0.3s;
+}
+ 
+.cd-panel-container {
+    /*...*/
+    position: fixed;
+    width: 25%;
+    height: 80%;
+    top: 120px;
+    right: 0;
+    background-color: gray; 
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-delay: 0.3s;
+ 
+    transform: translate3d(100%, 0, 0);
+}
+ 
+.is-visible .cd-panel-container {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+}
+
+#campus, #business {
+    padding-top: 52px;
+}
+
+
+
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+    padding-bottom: 180;}  /* must be same height as the footer */
+
+#footer {position: relative;
+    margin-top: -180; /* negative value of footer height */
+    height: 180;
+    clear:both;} 
+
+.histogram-campus {
+    height: 300px;
+    padding-top: 100px;
+}
+
+/*Campus Histogram Styles*/
+
+.bar {
+  fill: darkorange;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+
+/*Campus Bullet Chart Styles*/
+
+.bullet-campus {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 700px;
+  height: 120px;
+  margin: 0;
+}
+
+.campusbullet { font: 10px sans-serif; }
+.campusbullet .campusmarker { stroke: #000; stroke-width: 2px; }
+.campusbullet .campustick line { stroke: #666; stroke-width: .5px; }
+.campusbullet .campusrange { fill: #eee; }
+.campusbullet .campusmeasure { fill: darkorange; }
+.campusbullet .campustitle { font-size: 14px; }
+
+/*Business Bullet Chart Styles*/
+
+.bullet-business {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 700px;
+  height: 190px;
+  margin: 0;
+}
+
+.businessbullet { font: 10px sans-serif; }
+.businessbullet .businessmarker { stroke: #000; stroke-width: 2px; }
+.businessbullet .businesstick line { stroke: #666; stroke-width: .5px; }
+.businessbullet .businessrange { fill: #eee; }
+.businessbullet .businessmeasure { fill: darkorange; }
+.businessbullet .businesstitle { font-size: 14px; }
+
+.biz-subtitle {
+    font-size: 16px;
+    text-decoration: underline;
+    height: 35px;
+}
+
+/*Business Histogram*/
+
+.business-bar {
+  fill: darkorange;
+}
+
+.business-bar:hover {
+  fill: steelblue;
+}
+
+.business-xaxis {
+  font: 15 px sans-serif;
+}
+
+.business-xaxis path, .business-yaxis path,
+.business-xaxis line, .business-yaxis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
