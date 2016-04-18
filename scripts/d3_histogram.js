@@ -53,6 +53,13 @@ campus_key = {
       .orient("left")
       .ticks(10);
 
+  var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<span style='color:yellow'>" + " " + d[a] + "</span><strong> Reviews: </strong> <span style='color:lightblue'>" + Math.round(d[b])+ "</span>";
+  })
+
   var svg = d3.select(".histogram-campus").append("svg")
       .attr("width", hist_width + hist_margin.left + hist_margin.right)
       .attr("height", hist_height + hist_margin.top + hist_margin.bottom)
@@ -61,6 +68,8 @@ campus_key = {
 
   $('.histogram-campus svg').attr("style", "padding-left:150px;")
   update('cal');
+
+  svg.call(tip);
 
 function update(data_in) {
 
@@ -92,6 +101,8 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
 
           rect
              .attr("class", "bar")
+             .on('mouseover', tip.show)
+             .on('mouseout', tip.hide)
              .attr("x", function(d) { return x(d[a]); })
              .attr("width", x.rangeBand())
              .attr("y", function(d) { return y(d[b]); })
@@ -107,7 +118,12 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
  svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + hist_height + ")")
-    .call(xAxis);     
+    .call(xAxis)
+    .selectAll("text")
+    .style("text-anchor", "end")
+    .attr("dx", "-.8em")
+    .attr("dy", ".15em")
+    .attr("transform", "rotate(-25)" );     
 
 
  svg.select(".y.axis").remove(); //Remove previous y-axis
