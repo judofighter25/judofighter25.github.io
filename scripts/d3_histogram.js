@@ -53,13 +53,6 @@ campus_key = {
       .orient("left")
       .ticks(10);
 
-  var tip = d3.tip()
-  .attr('class', 'd3-tip')
-  .offset([-10, 0])
-  .html(function(d) {
-    return "<span style='color:yellow'>" + " " + d[a] + "</span><strong> Reviews: </strong> <span style='color:lightblue'>" + Math.round(d[b])+ "</span>";
-  })
-
   var svg = d3.select(".histogram-campus").append("svg")
       .attr("width", hist_width + hist_margin.left + hist_margin.right)
       .attr("height", hist_height + hist_margin.top + hist_margin.bottom)
@@ -69,8 +62,6 @@ campus_key = {
   $('.histogram-campus svg').attr("style", "padding-left:150px;")
   update('cal');
 
-  svg.call(tip);
-
 function update(data_in) {
 
 d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, data) {
@@ -78,7 +69,13 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
    a = data_in;
    b = data_in + "_" + "count"; //Review Count
    
-  
+   var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<span style='color:yellow'>" + " " + d[a] + "</span><strong> Reviews: </strong> <span style='color:lightblue'>" + Math.round(d[b])+ "</span>";
+  })
+   svg.call(tip);
    //This code needs to be lined up with the naming above to work properly
    data.forEach(function(d) {
     d[b] = +d[b]; 
