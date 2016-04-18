@@ -121,8 +121,8 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
     .call(xAxis)
     .selectAll("text")
     .style("text-anchor", "end")
-    .attr("dx", "-.8em")
-    .attr("dy", ".15em")
+    .attr("dx", "2.2em")
+    .attr("dy", "1.15em")
     .attr("transform", "rotate(25)" );     
 
 
