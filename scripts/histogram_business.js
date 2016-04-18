@@ -21,6 +21,13 @@ var businessyAxis = d3.svg.axis()
     .orient("left")
     .ticks(10); 
 
+var businesstip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<span style='color:yellow'>" + " " + d[a] + "</span><strong> Reviews: </strong> <span style='color:lightblue'>" + Math.round(d[b])+ "</span>";
+  })
+
 var svg = d3.select(".histogram-business").append("svg")
     .attr("width", businesswidth + businessmargin.left + businessmargin.right)
     .attr("height", businessheight + businessmargin.top + businessmargin.bottom)
@@ -29,6 +36,8 @@ var svg = d3.select(".histogram-business").append("svg")
 
 $('.histogram-business svg').attr("style", "padding:15px 0 0 150px;")
 businessupdate('DO1Ukiuia9hs33VTnTY_Jg')  //Initial output when user first launch the site
+
+svg.call(businesstip);
 
 //Take in school id and update the data then histogram based on the id
 function businessupdate(data_in) {
@@ -62,6 +71,8 @@ d3.tsv("../209_FinalProject_Data/histogram_business.tsv", function(error, data) 
 
           rect
              .attr("class", "business-bar")
+             .on('mouseover', businesstip.show)
+             .on('mouseout', businesstip.hide)
              .attr("x", function(d) { return businessx(d[a]); })
              .attr("width", businessx.rangeBand())
              .attr("y", function(d) { return businessy(d[b]); })

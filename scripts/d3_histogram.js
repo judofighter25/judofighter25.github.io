@@ -123,7 +123,7 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
     .style("text-anchor", "end")
     .attr("dx", "-.8em")
     .attr("dy", ".15em")
-    .attr("transform", "rotate(-25)" );     
+    .attr("transform", "rotate(25)" );     
 
 
  svg.select(".y.axis").remove(); //Remove previous y-axis
