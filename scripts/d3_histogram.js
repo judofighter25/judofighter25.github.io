@@ -35,7 +35,7 @@ campus_key = {
 //Beginning of d3 code
   var hist_margin = {top: 25, right: 20, bottom: 20, left: 150},
       hist_width = 765 - hist_margin.left - hist_margin.right,
-      hist_height = 300 - hist_margin.top - hist_margin.bottom;
+      hist_height = 500 - hist_margin.top - hist_margin.bottom;
       padding = -150;
 
   var x = d3.scale.ordinal()
