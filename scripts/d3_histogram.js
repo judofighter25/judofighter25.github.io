@@ -120,7 +120,7 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
     .attr("transform", "translate(0," + hist_height + ")")
     .call(xAxis)
     .selectAll("text")
-    .style("text-anchor", "end")
+    .style("text-anchor", "middle")
     .attr("dx", "2.2em")
     .attr("dy", "1.15em")
     .attr("transform", "rotate(25)" );     
