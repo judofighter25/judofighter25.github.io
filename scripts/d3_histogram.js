@@ -33,7 +33,7 @@ campus_key = {
   } 
 
 //Beginning of d3 code
-  var hist_margin = {top: 25, right: 20, bottom: 50, left: 150},
+  var hist_margin = {top: 25, right: 20, bottom: 80, left: 150},
       hist_width = 765 - hist_margin.left - hist_margin.right,
       hist_height = 300 - hist_margin.top - hist_margin.bottom;
       padding = -150;
