@@ -63,8 +63,3 @@ target/
 
 #DS_Store
 .DS_Store
-
-#No Data
-*.json
-*.csv
-*.xlsx
