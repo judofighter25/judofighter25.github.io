@@ -60,11 +60,6 @@ campus_key = {
     return "<span style='color:yellow'>" + " " + d[a] + "</span><strong> Reviews: </strong> <span style='color:lightblue'>" + Math.round(d[b])+ "</span>";
   })
 
-  function tip_hack() {
-    svg.call(tip);
-    tip.show();
-  }
-
   var svg = d3.select(".histogram-campus").append("svg")
       .attr("width", hist_width + hist_margin.left + hist_margin.right)
       .attr("height", hist_height + hist_margin.top + hist_margin.bottom)
@@ -106,7 +101,7 @@ d3.tsv("../209_FinalProject_Data/campus_histogram_data.tsv", function(error, dat
 
           rect
              .attr("class", "bar")
-             .on('mouseover', tip_hack())
+             .on('mouseover', tip.show)
              .on('mouseout', tip.hide)
              .attr("x", function(d) { return x(d[a]); })
              .attr("width", x.rangeBand())
