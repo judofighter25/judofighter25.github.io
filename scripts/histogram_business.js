@@ -31,7 +31,7 @@ var businesstip = d3.tip()  //28-53, 63, 91-96, 100, 137-138
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<span style='color: yellow'>" + Math.round(d[b])+ " Star Reviews: " + "<span style='color:white'>" + Math.round(d[b])+ "</span>";
+    return "<span style='color: yellow'> Star Reviews: " + "<span style='color:white'>" + Math.round(d[b])+ "</span>";
   })    
 
 $('.histogram-business svg').attr("style", "padding:15px 0 0 150px;")
