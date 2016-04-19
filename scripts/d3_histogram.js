@@ -61,7 +61,7 @@ campus_key = {
   })
 
   function tip_hack() {
-    tip();
+    svg.call(tip);
     tip.show();
   }
 
