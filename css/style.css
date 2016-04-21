@@ -27,6 +27,10 @@ body {
     line-height: 6.8;
 }
 
+#page0 {
+  height: 700px;
+}
+
 #page1 {
     height: 350px;
 }
@@ -89,11 +93,22 @@ body {
     transition-delay: 0s;
 }
 
-#campus, #business {
+#campus, #business, #top {
     padding-top: 52px;
 }
 
+.jumbotron {
+  text-align: center;
+  padding: 48px 0;
+  margin: 155px 0;
+  height: 296px;
+  width: 1120px;
+}
 
+#page0 .container {
+  background-image: url('../images/food_background.jpg');
+  height: 616px;
+}
 
 html, body {height: 100%;}
 
